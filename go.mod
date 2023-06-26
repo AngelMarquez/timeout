@@ -1,4 +1,4 @@
-module github.com/GuanceCloud/timeout
+module github.com/AngelMarquez/timeout
 
 go 1.15
 
