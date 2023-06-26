@@ -37,6 +37,12 @@ func (w *Writer) Write(data []byte) (int, error) {
 	return w.body.Write(data)
 }
 
+func (w *Writer) WriteHeaderNow() {
+	if !w.Written() {
+		w.ResponseWriter.WriteHeader(w.code)
+	}
+}
+
 // WriteHeader will write http status code
 func (w *Writer) WriteHeader(code int) {
 	checkWriteHeaderCode(code)
